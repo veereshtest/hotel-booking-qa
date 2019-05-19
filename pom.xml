@@ -3,10 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ee.automation</groupId>
-	<artifactId>hotelbooking</artifactId>
+	<artifactId>hotel-booking-qa</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
-	<name>hotelbooking</name>
+	<name>hotel-booking-qa</name>
 	
 	<properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

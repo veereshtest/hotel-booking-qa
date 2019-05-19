@@ -17,6 +17,6 @@ To run tests from the command line:
 To run tests from IDE:
 * "RunCuksesTest" file -> The test scripts will run on the chrome browser by default.
 
-##Reporting:
+## Reporting:
 * The report is available at the following location: 
 /hotel-booking-qa/target/cucumber-html-report/index.html
