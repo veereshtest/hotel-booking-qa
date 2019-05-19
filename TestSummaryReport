@@ -1,0 +1,54 @@
+                      			Test Summary Report
+
+Application: Hotel Booking Form
+Tester: Veeresh Palacharla
+Types of Testing: Functional, Exploratory, Security, Usability, Accessibility, Cross Browser and Performance Testing.
+Description: I have performed above testing types on hotel booking form application and identified issues listed below.
+
+Functional Testing:
+	1. Creation of Hotel booking
+	2. Delete created booking 
+	
+Security Testing:
+	1. No secure http protocol -  Information shared across the network is not encrypted. Other users have access to it.
+	2. XSS Injection  -  It is possible to inject into first name and surname fields on the hotel booking form. Attackers can tamper the data. Example: <h1>first name</h1>.
+	3. Booking information is available to all users -
+       No authenticated session that means data created by one user is visible to all other users  if they share the hotel booking page URL.
+	4. Further penetration testing can be performed using OWASP ZAP or BURPS. A full active scan and spider attack can be performed.
+
+Cross Browser Testing:
+	The hotel booking application works as expected in Chrome, Safari.However there are issues in Firefox browser.
+		• List of Issues in Firefox:
+			1. Save button not aligned with other fields on the form
+			2. Delete button not aligned with Save button
+
+Compatibility Testing: 
+	1. The application is not compatible with iPhone and old iPad devices.
+	2. Works in iPad Pro device apart from some UX issues.
+
+Usability Testing:
+	1. User able to choose past dates for hotel booking.
+	2. Nice if it loads the created booking records list below the page.
+	3. No Validation - Duplicate Record Creation is Possible.
+
+Exploratory Testing:
+	1. User can book with negative price value
+	2. script.js:15 Uncaught TypeError: Cannot read property 'bookingid' of undefined – When loading the form without any pre-bookings
+	3. If date is entered in dd-mm-yyyy format then the application does not throw any errors on the frontend but it actually returns a 500 for that request in the console and the same applies when an invalid price is entered into the price field (for example : 188.90.99)
+	4. The date field is set to 1970-01-01 when an invalid date is provided
+	5. No Field validation or REGEX on text fields
+	6. Application allows to enter start date after end date and end date before start date
+	7. Space between the fields(columns) not consistent
+	8. Deposit dropdown not aligned with other fields
+	9. Nice if it loads the records on the bottom of the page
+
+Accessibility Testing :
+	1. Performed accessibility testing using WAVE , Voiceover and keyboard navigation
+	2. Wave has notified 7 errors which include missing form labels and Document language missing. 
+	3. While using voiceover (screen reader) – the text field labels are not read out, hence visually challenged users won’t be able to access the application.
+
+
+Performance Testing :
+	1. Performance testing can be done using Gatling. 
+	2. Load , Stress and Soak testing can be performed if the volumetrics are available. Gatling provides a detailed report with the number requests per second, response per second and also the number of active users per second on the application throughout the simulation. 
+
