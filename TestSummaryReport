@@ -5,7 +5,7 @@ Tester: Veeresh Palacharla
 Types of Testing: Functional, Exploratory, Security, Usability, Accessibility, Cross Browser and Performance Testing.
 Description: I have performed above testing types on hotel booking form application and identified issues listed below.
 
-Functional Testing:
+Functional Testing: Automation scripts created for below scenarios.
 	1. Creation of Hotel booking
 	2. Delete created booking 
 	
