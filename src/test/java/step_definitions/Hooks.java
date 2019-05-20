@@ -10,9 +10,9 @@ import cucumber.api.java.Before;
 import utilities.BrowserUtils;
 
 public class Hooks {
-	
-	private static Logger log = Logger.getLogger(Hooks.class.getName()); 
-    public static String browser = System.getProperty("browser");
+
+	private static Logger log = Logger.getLogger(Hooks.class.getName());
+	public static String browser = System.getProperty("browser");
 
 	/**
 	 * Load browser based on the selection
@@ -20,7 +20,7 @@ public class Hooks {
 	@Before
 	public void init() throws Exception {
 		String browser = System.getProperty("browser");
-		
+
 		if (browser == null) {
 			browser = "chrome";
 		}
@@ -38,7 +38,6 @@ public class Hooks {
 		}
 	}
 
-	
 	/**
 	 * Embed a screenshot in test report if test is marked as failed
 	 */

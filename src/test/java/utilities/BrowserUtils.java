@@ -8,14 +8,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserUtils {
-	
-	private static Logger log = Logger.getLogger(BrowserUtils.class.getName()); 
+
+	private static Logger log = Logger.getLogger(BrowserUtils.class.getName());
 	public static WebDriver driver;
-	
-    public static void getBrowser(String browser) throws Exception {
+
+	public static void getBrowser(String browser) throws Exception {
 		String os = System.getProperty("os.name").toLowerCase();
 		log.info("Current opertaing System is: " + os);
-		
+
 		if (os.contains("mac")) {
 			if (browser.equalsIgnoreCase("firefox")) {
 				System.setProperty("webdriver.gecko.driver", "drivers/firefox/geckodriver");

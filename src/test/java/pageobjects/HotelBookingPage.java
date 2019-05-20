@@ -74,11 +74,12 @@ public class HotelBookingPage {
 	}
 
 	public void deleteRecord() {
+
 		deleteXpath = String.format("//input[@onclick='deleteBooking(%s)']", id);
 		driver.findElement(By.xpath(deleteXpath)).click();
 	}
 
-	public String get_record_by_id() {
+	public String getRecordById() {
 		idXpath = "//*[@id=" + id + "]/div[1]/p";
 		return idXpath;
 

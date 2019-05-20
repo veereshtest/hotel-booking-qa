@@ -11,12 +11,11 @@ import pageobjects.HotelBookingPage;
 import utilities.BrowserUtils;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-
 import org.apache.log4j.Logger;
 
 public class HotelBookingFormSteps {
-	private static Logger log = Logger.getLogger(HotelBookingFormSteps.class.getName()); 
-    WebDriver driver;
+	private static Logger log = Logger.getLogger(HotelBookingFormSteps.class.getName());
+	WebDriver driver;
 	HotelBookingPage hotelBookingPage;
 	WebDriverWait wait;
 
@@ -36,7 +35,8 @@ public class HotelBookingFormSteps {
 	}
 
 	@Given("^I Enter the booking information with \"(.*?)\", \"(.*?)\", \"(.*?)\", \"(.*?)\", \"(.*?)\", \"(.*?)\"$")
-	public void enterBookingInformation(String firstName, String lastName, String price, String deposit, String checkin, String checkout) throws Throwable {
+	public void enterBookingInformation(String firstName, String lastName, String price, String deposit,
+			String checkin, String checkout) throws Throwable {
 		log.info("Enter Booking Information");
 		hotelBookingPage.fillBookingDetails(firstName, lastName, price, deposit, checkin, checkout);
 		log.info("Booking Information Entered");
@@ -54,21 +54,24 @@ public class HotelBookingFormSteps {
 	@Then("^I Should be able to see the new booking entry with FistName as \"([^\"]*)\" in the records list$")
 	public void verifyNewBookingIsCreated(String firstName) throws Throwable {
 		hotelBookingPage.selectRecordFromList(firstName);
-		log.info("Record is selcted");
 		assertThat(hotelBookingPage.getNameFromRecord(), equalTo(firstName));
+		System.out.println("************" + firstName);
+		String Name = hotelBookingPage.getNameFromRecord();
+		System.out.println("********:" + Name);
 		log.info("Record creation is successfull");
 
 	}
-	
+
 	@Given("^I Create a new booking with \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\", \"([^\"]*)\"$")
-	public void creteNewBooking(String firstName, String lastName, String price, String deposit, String checkin, String checkout) throws Throwable {
+	public void creteNewBooking(String firstName, String lastName, String price, String deposit, String checkin,
+			String checkout) throws Throwable {
 		hotelBookingPage.fillBookingDetails(firstName, lastName, price, deposit, checkin, checkout);
 		log.info("Booking information is entered");
 		hotelBookingPage.clickSaveButton();
 		log.info("Record saved");
-        driver.navigate().refresh();
+		driver.navigate().refresh();
 	}
-	
+
 	@When("^I Click the Delete button on record with \"([^\"]*)\"$")
 	public void clickDeleteButton(String firstName) throws Throwable {
 		driver.navigate().refresh();
@@ -82,7 +85,7 @@ public class HotelBookingFormSteps {
 	public void verifyRecordIsDeleted() throws Throwable {
 		driver.navigate().refresh();
 		log.info("Verify record is deleted from list");
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(hotelBookingPage.get_record_by_id())));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(hotelBookingPage.getRecordById())));
 		log.info("Record deletion is scuccessfull");
 
 	}
