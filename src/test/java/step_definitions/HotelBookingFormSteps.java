@@ -55,9 +55,6 @@ public class HotelBookingFormSteps {
 	public void verifyNewBookingIsCreated(String firstName) throws Throwable {
 		hotelBookingPage.selectRecordFromList(firstName);
 		assertThat(hotelBookingPage.getNameFromRecord(), equalTo(firstName));
-		System.out.println("************" + firstName);
-		String Name = hotelBookingPage.getNameFromRecord();
-		System.out.println("********:" + Name);
 		log.info("Record creation is successfull");
 
 	}
