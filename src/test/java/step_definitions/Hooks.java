@@ -29,7 +29,9 @@ public class Hooks {
 				BrowserUtils.getBrowser("firefox");
 			} else if (browser.equalsIgnoreCase("Chrome")) {
 				BrowserUtils.getBrowser("chrome");
-			} else {
+			} else if (browser.equalsIgnoreCase("Headless")) 
+				BrowserUtils.getBrowser("headless");
+			else {
 				throw new Exception("Browser is not supported");
 			}
 
