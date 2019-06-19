@@ -11,6 +11,7 @@ import utilities.BrowserUtils;
 
 public class Hooks {
 
+	BrowserUtils browserUtils;
 	private static Logger log = Logger.getLogger(Hooks.class.getName());
 	public static String browser = System.getProperty("browser");
 
@@ -20,17 +21,18 @@ public class Hooks {
 	@Before
 	public void init() throws Exception {
 		String browser = System.getProperty("browser");
+		browserUtils = new BrowserUtils();
 
 		if (browser == null) {
 			browser = "chrome";
 		}
 		try {
 			if (browser.equalsIgnoreCase("Firefox")) {
-				BrowserUtils.getBrowser("firefox");
+				browserUtils.initiateBrowser("firefox");
 			} else if (browser.equalsIgnoreCase("Chrome")) {
-				BrowserUtils.getBrowser("chrome");
+				browserUtils.initiateBrowser("chrome");
 			} else if (browser.equalsIgnoreCase("Headless")) 
-				BrowserUtils.getBrowser("headless");
+				browserUtils.initiateBrowser("headless");
 			else {
 				throw new Exception("Browser is not supported");
 			}

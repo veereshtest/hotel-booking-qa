@@ -49,6 +49,11 @@
     		<version>1.3</version>
     		<scope>test</scope>
 		</dependency>
+		<dependency>
+    <groupId>com.saucelabs</groupId>
+    <artifactId>saucerest</artifactId>
+    <version>1.0.40</version>
+</dependency>
 	</dependencies>
 
 	<build>

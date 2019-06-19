@@ -13,7 +13,7 @@ public class BrowserUtils {
 	private static Logger log = Logger.getLogger(BrowserUtils.class.getName());
 	public static WebDriver driver;
 
-	public static void getBrowser(String browser) throws Exception {
+	public void initiateBrowser(String browser) throws Exception {
 		String os = System.getProperty("os.name").toLowerCase();
 		log.info("Current opertaing System is: " + os);
 
