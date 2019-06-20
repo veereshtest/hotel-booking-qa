@@ -30,7 +30,7 @@ public class SauceBrowserUtils {
 
 	// private final String BASE_URL = "https://www.saucedemo.com";
 
-	public void initiateSauceBrowser(String browser) throws Exception {
+	public void initiateBrowser(String browser) throws Exception {
 		String username = System.getenv("SAUCE_USERNAME");
 		String accesskey = System.getenv("SAUCE_ACCESS_KEY");
 

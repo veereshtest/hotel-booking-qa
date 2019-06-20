@@ -21,7 +21,7 @@ public class Hooks {
 	@Before
 	public void init() throws Exception {
 		String browser = System.getProperty("browser");
-		browserUtils = new BrowserUtils();
+	    browserUtils = new BrowserUtils();
 
 		if (browser == null) {
 			browser = "chrome";
